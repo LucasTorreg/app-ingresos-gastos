@@ -20,6 +20,22 @@ export FLASK_APP=main.py
 ```
 set FLASK_APP=main.py
 ```
+
+# Otra opción de ejecución
+instalar dot env en la terminal con el comando:
+```
+pip install python-dotenv
+```
+-crear un archivo .env y dentro agregar lo siguiente:
+```
+FLASK_APP=main.py
+FLASK_DEBUG=True
+```
+-y luego ejecutar en la terminal el comando:
+```
+flask run
+```
+
 # Comando para ejecutar el servidor
 ```
 flask --app main run
