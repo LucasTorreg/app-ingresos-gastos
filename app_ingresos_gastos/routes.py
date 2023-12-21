@@ -14,16 +14,16 @@ def index():
         "concepto":"Supermercado",
         "monto":"-200"}
     ]
-    return render_template("index.html", data = datos)
+    return render_template("index.html", data = datos, titulo = "Lista")
 
 @app.route("/new")
 def new():
-    return render_template("new.html")
+    return render_template("new.html", titulo = "Nuevo", tipoAccion = "Registro", tipoBoton = "Guardar")
 
 @app.route("/delete")
 def delete():
-    return render_template("delete.html")
+    return render_template("delete.html", titulo = "Borrar")
 
 @app.route("/update")
 def update():
-    return render_template("update.html")
+    return render_template("update.html", titulo = "Actualizar", tipoAccion = "Actualización", tipoBoton = "Editar")
