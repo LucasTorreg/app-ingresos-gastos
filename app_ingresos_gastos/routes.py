@@ -21,7 +21,7 @@ def new():
     if request.method== "POST":
         comprobar_error = validarFormulario(request.form)
         if comprobar_error:
-            return render_template("new.html",titulo="Nuevo",tipoAccion="Registro",tipoBoton="Guardar", error = comprobar_error)
+            return render_template("new.html",titulo="Nuevo",tipoAccion="Registro",tipoBoton="Guardar", error = comprobar_error, dataForm = request.form)
 
         else:
             #return "esto deberia registrarse " + str(request.form)
@@ -36,7 +36,7 @@ def new():
             return redirect("/")
 
     else:#si es GET
-        return render_template("new.html",titulo="Nuevo",tipoAccion="Registro",tipoBoton="Guardar")
+        return render_template("new.html",titulo="Nuevo",tipoAccion="Registro",tipoBoton="Guardar", dataForm = {})
 
 
 @app.route("/delete")
@@ -45,7 +45,7 @@ def delete():
 
 @app.route("/update")
 def update():
-    return render_template("update.html", titulo = "Actualizar", tipoAccion = "Actualización", tipoBoton = "Editar")
+    return render_template("update.html", titulo = "Actualizar", tipoAccion = "Actualización", tipoBoton = "Editar", dataForm = {})
 
 
 
